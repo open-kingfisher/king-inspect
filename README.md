@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/kubernetes-sigs/kubebuilder.svg?branch=master)](https://travis-ci.org/kubernetes-sigs/kubebuilder "Travis")
 [![Go Report Card](https://goreportcard.com/badge/sigs.k8s.io/kubebuilder)](https://goreportcard.com/report/sigs.k8s.io/kubebuilder)
 
-## Kubebuilder
+## King-Inspect
 
 Kubebuilder is a framework for building Kubernetes APIs using [custom resource definitions (CRDs)](https://kubernetes.io/docs/tasks/access-kubernetes-api/extend-api-custom-resource-definitions).
 
@@ -13,12 +13,6 @@ to simplify building and publishing Kubernetes APIs from scratch.
 It is strongly recommended that you use a released version. Release binaries are available on the [releases](https://github.com/kubernetes-sigs/kubebuilder/releases) page.
 Follow the [instructions](https://book.kubebuilder.io/quick-start.html#installation) to install Kubebuilder.
 
-
-## Getting Started
-
-See the [Getting Started](https://book.kubebuilder.io/quick-start.html) documentation.
-
-![Quick Start](docs/gif/kb-demo.v2.0.1.svg)
 
 ## Documentation
 
