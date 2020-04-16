@@ -13,7 +13,8 @@
 
 ## 说明
 
-- 安全审查基于CIS Kubernetes_Benchmark_v1.5.0
+- 安全审查基于[CIS](https://www.cisecurity.org/cis-benchmarks/) Kubernetes_Benchmark_v1.5.0
+- 借鉴项目 [clusterlint](https://github.com/digitalocean/clusterlint)
 
 ## Makefile的使用
 
