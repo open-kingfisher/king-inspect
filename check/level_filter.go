@@ -114,7 +114,7 @@ var Message = map[int]string{
 	303: "节点硬盘空间不足",
 	304: "节点PID不足",
 	305: "节点节点的网络不可达",
-	306: "命名空间未处于就绪状态",
+	306: "命名空间未处于就绪状态，可以尝试使命名空间spec.finalizers:[]",
 	307: "Pod状态为%s，Pod状态应该是Running或者Succeeded",
 	308: "Pod中容器%s重启次数为%d，大于%d次",
 	400: "禁用对API Server的匿名请求,建议添加--anonymous-auth=false参数",
