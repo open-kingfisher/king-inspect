@@ -1,7 +1,7 @@
 package basic
 
 import (
-	"kingfisher/king-inspect/check"
+	"github.com/open-kingfisher/king-inspect/check"
 
 	v1 "k8s.io/api/core/v1"
 )

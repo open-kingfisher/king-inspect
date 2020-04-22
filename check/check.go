@@ -1,8 +1,8 @@
 package check
 
 import (
+	"github.com/open-kingfisher/king-inspect/util"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"kingfisher/king-inspect/util"
 	"strings"
 )
 

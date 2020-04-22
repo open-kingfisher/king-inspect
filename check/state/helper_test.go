@@ -1,9 +1,9 @@
 package state
 
 import (
+	"github.com/open-kingfisher/king-inspect/check"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"kingfisher/king-inspect/check"
 )
 
 func initPod() *check.Objects {

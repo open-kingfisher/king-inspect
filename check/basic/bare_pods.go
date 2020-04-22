@@ -1,8 +1,8 @@
 package basic
 
 import (
-	"kingfisher/kf/common/log"
-	"kingfisher/king-inspect/check"
+	"github.com/open-kingfisher/king-inspect/check"
+	"github.com/open-kingfisher/king-utils/common/log"
 )
 
 func init() {

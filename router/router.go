@@ -2,9 +2,9 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"kingfisher/kf/common"
-	jwtAuth "kingfisher/kf/middleware/jwt"
-	"kingfisher/king-inspect/impl"
+	"github.com/open-kingfisher/king-inspect/impl"
+	"github.com/open-kingfisher/king-utils/common"
+	jwtAuth "github.com/open-kingfisher/king-utils/middleware/jwt"
 	"net/http"
 )
 

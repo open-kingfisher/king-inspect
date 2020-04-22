@@ -1,7 +1,7 @@
 package security
 
 import (
-	"kingfisher/king-inspect/check"
+	"github.com/open-kingfisher/king-inspect/check"
 	"strings"
 )
 

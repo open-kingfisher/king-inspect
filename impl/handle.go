@@ -2,8 +2,8 @@ package impl
 
 import (
 	"github.com/gin-gonic/gin"
-	"kingfisher/kf/common"
-	"kingfisher/kf/common/handle"
+	"github.com/open-kingfisher/king-utils/common"
+	"github.com/open-kingfisher/king-utils/common/handle"
 )
 
 type HandleGetInterface interface {

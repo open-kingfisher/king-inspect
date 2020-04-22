@@ -1,7 +1,7 @@
 package basic
 
 import (
-	"kingfisher/king-inspect/check"
+	"github.com/open-kingfisher/king-inspect/check"
 )
 
 func init() {

@@ -3,8 +3,8 @@ package basic
 import (
 	"testing"
 
+	"github.com/open-kingfisher/king-inspect/check"
 	"github.com/stretchr/testify/assert"
-	"kingfisher/king-inspect/check"
 )
 
 func TestLatestTagCheckMeta(t *testing.T) {

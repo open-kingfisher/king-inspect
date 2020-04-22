@@ -3,10 +3,10 @@ package basic
 import (
 	"testing"
 
+	"github.com/open-kingfisher/king-inspect/check"
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
 	resource "k8s.io/apimachinery/pkg/api/resource"
-	"kingfisher/king-inspect/check"
 )
 
 func TestResourceRequestsCheckMeta(t *testing.T) {

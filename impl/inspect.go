@@ -2,11 +2,11 @@ package impl
 
 import (
 	"github.com/gin-gonic/gin"
-	"kingfisher/kf/common"
-	"kingfisher/kf/common/access"
-	"kingfisher/kf/common/handle"
-	"kingfisher/kf/common/log"
-	"kingfisher/king-inspect/resource"
+	"github.com/open-kingfisher/king-inspect/resource"
+	"github.com/open-kingfisher/king-utils/common"
+	"github.com/open-kingfisher/king-utils/common/access"
+	"github.com/open-kingfisher/king-utils/common/handle"
+	"github.com/open-kingfisher/king-utils/common/log"
 	"net/http"
 )
 
