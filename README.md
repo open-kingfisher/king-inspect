@@ -1,4 +1,6 @@
-## Kingfisher Inspect
+# Kingfisher Inspect
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![Go Report Card](https://goreportcard.com/badge/github.com/open-kingfisher/king-inspect)](https://goreportcard.com/report/github.com/open-kingfisher/king-inspect)
 
 对Kubernetes集群进行健康扫描，以图表的方式进行展示
 
