@@ -14,3 +14,10 @@ require (
 	k8s.io/client-go v11.0.0+incompatible
 	k8s.io/metrics v0.18.2
 )
+
+replace (
+	k8s.io/api => k8s.io/api v0.17.3
+	k8s.io/apimachinery => k8s.io/apimachinery v0.17.3
+	k8s.io/client-go => k8s.io/client-go v0.17.3
+	k8s.io/metrics => k8s.io/metrics v0.17.3
+)
