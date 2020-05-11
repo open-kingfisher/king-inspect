@@ -37,6 +37,12 @@ HPA | 无用的HorizontalPodAutoscaler
 Pod中断预算 | 无用的PodDisruptionBudget
 Pod预设 | 无用的PodPreset
 
+状态检查 | 描述 
+------------ | -------------
+节点状态 | 节点处于未知状态;节点未处于就绪状态;节点内存不足；节点硬盘空间不足；节点PID不足；节点节点的网络不可达
+命名空间状态 | 命名空间未处于就绪状态
+Pod状态 | Pod状态应该是Running或者Succeeded；Pod中容器重启次数为大于10
+组件状态 | 组件controller-manager、scheduler、etcd状态
 ## 依赖
 
 - Golang： `Go >= 1.13`
