@@ -19,7 +19,7 @@
 卷挂载(主机路径) | 避免挂载主机路径
 节点自定义标签 | 避免自定义节点标签 
 Metric Server | 建议集群安装Metric Server服务
-Pod节点选择标签(节点名作为节点选择标签) | test 
+Pod节点选择标签(节点名作为节点选择标签) | 避免Pod节点选择标签为节点名
 准入控制Webhook(Validating Webhook 和 Mutating Webhook) | 避免配置的Validating Webhook针对的服务的命名空间不存在；避免配置的Validating Webhook针对的service不存在；配置的Mutating Webhook针对的服务的命名空间不存在；避免配置的Mutating Webhook针对的service不存在；避免配置的Validating Webhook针对的Namespace为kubernetes系统Namespace；避免已配置的Mutating Webhook针对的Namespace为kubernetes系统Namespace
 
 ## 依赖
