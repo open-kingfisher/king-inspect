@@ -7,7 +7,7 @@
 ![image](screenshots/inspect.gif)
 
 ## 现有检查项目
-![image](screenshots/inspect_item.png)
+
 
 ## 依赖
 
