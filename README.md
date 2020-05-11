@@ -22,6 +22,21 @@ Metric Server | 建议集群安装Metric Server服务
 Pod节点选择标签(节点名作为节点选择标签) | 避免Pod节点选择标签为节点名
 准入控制Webhook(Validating Webhook 和 Mutating Webhook) | 避免配置的Validating Webhook针对的服务的命名空间不存在；避免配置的Validating Webhook针对的service不存在；配置的Mutating Webhook针对的服务的命名空间不存在；避免配置的Mutating Webhook针对的service不存在；避免配置的Validating Webhook针对的Namespace为kubernetes系统Namespace；避免已配置的Mutating Webhook针对的Namespace为kubernetes系统Namespace
 
+无用检查 | 描述 
+------------ | -------------
+服务账户 | 无用的ServiceAccount
+ConfigMap | 无用的ConfigMap
+Secret | 无用的Secret
+PV | 无用的PersistentVolume
+PVC | 无用的PersistentVolumeClaim
+HPA | 无用的HorizontalPodAutoscaler
+集群角色 | 无用的ClusterRole
+角色 | 无用的Role
+服务 | 无用的Service
+副本集 | 无用的ReplicaSet
+Pod中断预算 | 无用的PodDisruptionBudget
+Pod预设 | 无用的PodPreset
+
 ## 依赖
 
 - Golang： `Go >= 1.13`
