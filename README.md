@@ -43,6 +43,14 @@ Pod预设 | 无用的PodPreset
 命名空间状态 | 命名空间未处于就绪状态
 Pod状态 | Pod状态应该是Running或者Succeeded；Pod中容器重启次数为大于10
 组件状态 | 组件controller-manager、scheduler、etcd状态
+
+安全检查 | 描述 
+------------ | -------------
+特权容器 | 避免使用特权模式的容器
+API Server | 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+Controller Manager| 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+Scheduler | 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+Etcd | 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
 ## 依赖
 
 - Golang： `Go >= 1.13`
@@ -50,6 +58,9 @@ Pod状态 | Pod状态应该是Running或者Succeeded；Pod中容器重启次数�
 ## 说明
 
 - 安全审查基于[CIS](https://www.cisecurity.org/cis-benchmarks/) Kubernetes_Benchmark_v1.5.0
+- CIS中文说明
+-- [CIS kubernetes benchmarks Master Node 配置文件](https://zhuanlan.zhihu.com/p/138445189)
+-- [CIS kubernetes benchmarks API Server 配置](https://zhuanlan.zhihu.com/p/138995000)
 - 借鉴项目 [clusterlint](https://github.com/digitalocean/clusterlint)
 
 ## Makefile的使用
