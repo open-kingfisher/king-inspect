@@ -7,8 +7,22 @@
 ![image](screenshots/inspect.gif)
 
 ## 现有检查项目
-
-
+Base Inspect | Unused Inspect | Status Inspect
+------------ | -------------  | -------------
+裸Pod | test |test
+完全合格的镜像名(FQIN) | test | test
+镜像Latest标签 | test | test
+存活探针 | test | test
+就绪探针 | test | test
+默认命名空间 | test | test
+资源配额(资源要求检测大于5核5G) | test | test
+卷挂载(主机路径) | test | test
+节点自定义标签 | test | test
+Metric Server | test | test
+Pod节点选择标签(节点名作为节点选择标签) | test | test
+节点自定义标签 | test | test
+节点自定义标签 | test | test
+节点自定义标签 | test | test
 ## 依赖
 
 - Golang： `Go >= 1.13`
