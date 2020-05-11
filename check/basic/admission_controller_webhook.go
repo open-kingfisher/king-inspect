@@ -2,6 +2,8 @@ package basic
 
 import (
 	"github.com/open-kingfisher/king-inspect/check"
+	corev1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
 	v1 "k8s.io/api/core/v1"
 )
@@ -58,6 +60,18 @@ func (w *webhookCheck) Run(objects *check.Objects) ([]check.Diagnostic, check.Su
 					})
 				}
 			}
+			if wh.NamespaceSelector != nil {
+				if selectorMatchesNamespace(wh.NamespaceSelector, objects.SystemNamespace) {
+					// Webhooks不应该应该应用到kube-system命名空间中
+					diagnostics = append(diagnostics, check.Diagnostic{
+						Severity: check.Warning,
+						Message:  check.Message[121],
+						Kind:     check.ValidatingWebhookConfiguration,
+						Object:   &config.ObjectMeta,
+						Owners:   config.ObjectMeta.GetOwnerReferences(),
+					})
+				}
+			}
 		}
 	}
 
@@ -87,6 +101,18 @@ func (w *webhookCheck) Run(objects *check.Objects) ([]check.Diagnostic, check.Su
 					})
 				}
 			}
+			if wh.NamespaceSelector != nil {
+				if selectorMatchesNamespace(wh.NamespaceSelector, objects.SystemNamespace) {
+					// Webhooks不应该应该应用到kube-system命名空间中
+					diagnostics = append(diagnostics, check.Diagnostic{
+						Severity: check.Warning,
+						Message:  check.Message[122],
+						Kind:     check.MutatingWebhookConfiguration,
+						Object:   &config.ObjectMeta,
+						Owners:   config.ObjectMeta.GetOwnerReferences(),
+					})
+				}
+			}
 		}
 	}
 	summary.Issue = len(diagnostics)
@@ -110,4 +136,22 @@ func serviceExists(serviceList *v1.ServiceList, service, namespace string) bool 
 		}
 	}
 	return false
+}
+
+func selectorMatchesNamespace(selector *metav1.LabelSelector, namespace *corev1.Namespace) bool {
+	if selector.Size() == 0 {
+		return true
+	}
+	labels := namespace.GetLabels()
+	for key, value := range selector.MatchLabels {
+		if v, ok := labels[key]; !ok || v != value {
+			return false
+		}
+	}
+	for _, lbr := range selector.MatchExpressions {
+		if !match(labels, lbr) {
+			return false
+		}
+	}
+	return true
 }

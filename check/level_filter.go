@@ -94,6 +94,8 @@ var Message = map[int]string{
 	118: "已配置的Mutating Webhook针对的service不存在",
 	119: "避免使用节点的kubernetes.io/hostname标签作为Pod的节点选择标签，以防节点主机名修改而无法调度Pod",
 	120: "集群Metric Server没有安装",
+	121: "已配置的Validating Webhook针对的Namespace为kubernetes系统Namespace",
+	122: "已配置的Mutating Webhook针对的Namespace为kubernetes系统Namespace",
 	200: "没有使用的PV",
 	201: "没有使用的PVC",
 	202: "没有使用的Secret",
