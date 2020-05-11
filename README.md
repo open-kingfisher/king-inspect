@@ -9,18 +9,18 @@
 ## 现有检查项目
 基本检查 | 描述 
 ------------ | -------------
-裸Pod | test
-完全合格的镜像名(FQIN) | test 
-镜像Latest标签 | test 
-存活探针 | test 
-就绪探针 | test
-默认命名空间 | test 
-资源配额(资源要求检测大于5核5G) | test 
-卷挂载(主机路径) | test
-节点自定义标签 | test 
-Metric Server | test 
+裸Pod | 避免在集群中使用裸Pod
+完全合格的镜像名(FQIN) | 避免使用不完全合格的镜像名 
+镜像Latest标签 | 避免使用latest标签
+存活探针 | 建议为Pod创建存活探针 
+就绪探针 | 建议为Pod创建就绪探针
+默认命名空间 | 避免在default命名空间创建各种资源
+资源配额(资源要求检测大于5核5G) | 建议配置Pod的资源请求、Pod的资源限制同时检测Pod资源请求是否过大（大于5核5G视为过大）
+卷挂载(主机路径) | 避免挂载主机路径
+节点自定义标签 | 避免自定义节点标签 
+Metric Server | 建议集群安装Metric Server服务
 Pod节点选择标签(节点名作为节点选择标签) | test 
-准入控制Webhook(Validating Webhook 和 Mutating Webhook) | test 
+准入控制Webhook(Validating Webhook 和 Mutating Webhook) | 避免配置的Validating Webhook针对的服务的命名空间不存在；避免配置的Validating Webhook针对的service不存在；配置的Mutating Webhook针对的服务的命名空间不存在；避免配置的Mutating Webhook针对的service不存在；避免配置的Validating Webhook针对的Namespace为kubernetes系统Namespace；避免已配置的Mutating Webhook针对的Namespace为kubernetes系统Namespace
 
 ## 依赖
 
