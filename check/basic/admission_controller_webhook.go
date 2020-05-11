@@ -37,8 +37,6 @@ func (w *webhookCheck) Run(objects *check.Objects) ([]check.Diagnostic, check.Su
 	for _, config := range objects.ValidatingWebhookConfigurations.Items {
 		for _, wh := range config.Webhooks {
 			if wh.ClientConfig.Service != nil {
-				// Ensure that the service (and its namespace) that is configure actually exists.
-
 				if !namespaceExists(objects.Namespaces, wh.ClientConfig.Service.Namespace) {
 					diagnostics = append(diagnostics, check.Diagnostic{
 						Severity: check.Error,
