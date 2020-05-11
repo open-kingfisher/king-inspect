@@ -138,6 +138,41 @@ func serviceExists(serviceList *v1.ServiceList, service, namespace string) bool 
 	return false
 }
 
+func contains(list []string, name string) bool {
+	for _, l := range list {
+		if l == name {
+			return true
+		}
+	}
+	return false
+}
+
+func match(labels map[string]string, lbr metav1.LabelSelectorRequirement) bool {
+	switch lbr.Operator {
+	case metav1.LabelSelectorOpExists:
+		if _, ok := labels[lbr.Key]; ok {
+			return true
+		}
+		return false
+	case metav1.LabelSelectorOpDoesNotExist:
+		if _, ok := labels[lbr.Key]; !ok {
+			return true
+		}
+		return false
+	case metav1.LabelSelectorOpIn:
+		if v, ok := labels[lbr.Key]; ok && contains(lbr.Values, v) {
+			return true
+		}
+		return false
+	case metav1.LabelSelectorOpNotIn:
+		if v, ok := labels[lbr.Key]; !ok || !contains(lbr.Values, v) {
+			return true
+		}
+		return false
+	}
+	return false
+}
+
 func selectorMatchesNamespace(selector *metav1.LabelSelector, namespace *corev1.Namespace) bool {
 	if selector.Size() == 0 {
 		return true
