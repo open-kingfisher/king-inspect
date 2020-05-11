@@ -70,6 +70,7 @@ const (
 	ControllerManager              Kind     = "controller manager"
 	Scheduler                      Kind     = "scheduler"
 	ETCD                           Kind     = "etcd"
+	Component                      Kind     = "Component"
 )
 
 var Message = map[int]string{
@@ -119,6 +120,7 @@ var Message = map[int]string{
 	306: "命名空间未处于就绪状态，可以尝试使命名空间spec.finalizers:[]",
 	307: "Pod状态为%s，Pod状态应该是Running或者Succeeded",
 	308: "Pod中容器%s重启次数为%d，大于%d次",
+	309: "组件%s状态为%s, 消息:%s, 错误:%s",
 	400: "禁用对API Server的匿名请求,建议添加--anonymous-auth=false参数",
 	401: "不要使用基本身份验证，建议删除--basic-auth-file参数",
 	402: "不要使用基于Token的基本身份验证，建议删除--token-auth-file参数",
