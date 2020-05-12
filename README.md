@@ -47,10 +47,10 @@ Pod状态 | Pod状态应该是Running或者Succeeded；Pod中容器重启次数�
 安全检查 | 描述 
 ------------ | -------------
 特权容器 | 避免使用特权模式的容器
-API Server | 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
-Controller Manager| 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
-Scheduler | 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
-Etcd | 参考:[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+API Server | 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+Controller Manager| 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+Scheduler | 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+Etcd | 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
 ## 依赖
 
 - Golang： `Go >= 1.13`
