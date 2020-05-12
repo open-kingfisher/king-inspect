@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Go Report Card](https://goreportcard.com/badge/github.com/open-kingfisher/king-inspect)](https://goreportcard.com/report/github.com/open-kingfisher/king-inspect)
 
-对Kubernetes集群进行健康扫描，以图表的方式进行展示
+对Kubernetes集群进行健康扫描，以图表的方式进行展示、建议及说明
 
 ![image](screenshots/inspect.gif)
 
@@ -21,6 +21,8 @@
 Metric Server | 建议集群安装Metric Server服务
 Pod节点选择标签(节点名作为节点选择标签) | 避免Pod节点选择标签为节点名
 准入控制Webhook(Validating Webhook 和 Mutating Webhook) | 避免配置的Validating Webhook针对的服务的命名空间不存在；避免配置的Validating Webhook针对的service不存在；配置的Mutating Webhook针对的服务的命名空间不存在；避免配置的Mutating Webhook针对的service不存在；避免配置的Validating Webhook针对的Namespace为kubernetes系统Namespace；避免已配置的Mutating Webhook针对的Namespace为kubernetes系统Namespace
+命名空间资源限制 | 建议为命名空间添加资源限制（LimitRange）（未完成）
+命名空间资源配额 | 建议为命名空间添加资源配额（ResourceQuota）（未完成）
 
 无用检查 | 描述 
 ------------ | -------------
@@ -51,6 +53,13 @@ API Server | 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob
 Controller Manager| 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
 Scheduler | 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
 Etcd | 参考：[CIS](https://github.com/open-kingfisher/king-inspect/blob/master/doc/cis/CIS_Kubernetes_Benchmark_v1.5.0.pdf)
+
+## 关闭资源的指定检查项
+- 在资源的Annotations中添加如下注释，例如：禁止检查Pod状态和存活检测
+```yaml
+annotations: 
+      kingfisher.inspect.com/disabled-inspect: "pod-state,liveness"
+```
 ## 依赖
 
 - Golang： `Go >= 1.13`
