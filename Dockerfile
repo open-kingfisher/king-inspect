@@ -18,5 +18,3 @@ RUN set -xe \
 COPY --from=builder /king-inspect/bin/king-inspect /usr/local/bin
 
 ENTRYPOINT ["/bin/sh","/entrypoint.sh"]
-
-EXPOSE 8080
