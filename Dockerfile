@@ -1,4 +1,11 @@
+FROM golang:1.14.3 as builder
+ARG PROJECT_NAME="king-inspect"
+ARG GIT_URL="https://github.com/open-kingfisher/king-inspect.git"
+RUN git clone $GIT_URL /$PROJECT_NAME && cd /$PROJECT_NAME && make  
+
 FROM alpine:3.10
+
+ADD entrypoint.sh /entrypoint.sh
 
 ENV TIME_ZONE Asia/Shanghai
 RUN set -xe \
@@ -8,8 +15,8 @@ RUN set -xe \
     && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime \
     && mkdir /lib64 \
     && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
-ADD bin/king-inspect /usr/local/bin
+COPY --from=builder /king-inspect/bin/king-inspect /usr/local/bin
 
-CMD /usr/local/bin/king-inspect -dbURL='user:password@tcp(192.168.10.100:3306)/kingfisher' -listen=0.0.0.0:8080 -rabbitMQURL='amqp://user:password@king-rabbitmq:5672/'
+ENTRYPOINT ["/bin/sh","/entrypoint.sh"]
 
 EXPOSE 8080
