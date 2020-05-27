@@ -68,8 +68,9 @@ annotations:
 
 - 安全审查基于[CIS](https://www.cisecurity.org/cis-benchmarks/) Kubernetes_Benchmark_v1.5.0
 - CIS中文说明
-  - [CIS kubernetes benchmarks Master Node 配置文件](https://zhuanlan.zhihu.com/p/138445189)
-  - [CIS kubernetes benchmarks API Server 配置](https://zhuanlan.zhihu.com/p/138995000)
+  - [CIS Kubernetes Benchmarks Master Node 配置](https://zhuanlan.zhihu.com/p/138445189)
+  - [CIS Kubernetes Benchmarks API Server 配置](https://zhuanlan.zhihu.com/p/138995000)
+  - [CIS Kubernetes Benchmarks Controller Manager & Scheduler 配置](https://zhuanlan.zhihu.com/p/143861485)
 - 借鉴项目 [clusterlint](https://github.com/digitalocean/clusterlint)
 
 ## Makefile的使用
