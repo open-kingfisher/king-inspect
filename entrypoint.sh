@@ -1,5 +1,11 @@
 #!/bin/sh
-[ "$DB_URL" ] || DB_URL='user:password@tcp(192.168.10.100:3306)/kingfisher'
+[ "$MYSQL_USER" ] || MYSQL_USER='kingfisher'
+[ "$MYSQL_PASSWORD" ] || MYSQL_PASSWORD='kingfisher'
+[ "$MYSQL_HOST" ] || MYSQL_HOST='mysql'
+[ "$MYSQL_PORT" ] || PORT="3306"
+[ "$MYSQL_DB" ] || DB="kingfisher"
+
+[ "$DB_URL" ] || DB_URL= ${MYSQL_USER}:${MYSQL_PASSWORD}@tcp(${MYSQL_HOST}:${MYSQL_PORT})/${MYSQL_DB}
 [ "$LISTEN" ] || LISTEN=0.0.0.0
 [ "$PORT" ] || PORT=8080
 [ "$RABBITMQ_URL" ] || RABBITMQ_URL='amqp://user:password@king-rabbitmq:5672/'
