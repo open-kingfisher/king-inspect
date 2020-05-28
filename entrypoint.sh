@@ -18,7 +18,7 @@
 [ "$TIME_ZONE" ] || TIME_ZONE="Asia/Shanghai"
 [ "$ALPINE_REPO" ] || ALPINE_REPO="mirrors.aliyun.com"
 
-sed -i 's/dl-cdn.alpinelinux.org/${ALPINE_REPO}/g' /etc/apk/repositories     
+sed -i "s/dl-cdn.alpinelinux.org/${ALPINE_REPO}/g" /etc/apk/repositories     
 apk --no-cache add tzdata 
 echo "${TIME_ZONE}" > /etc/timezone 
 ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime 
