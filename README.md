@@ -71,6 +71,7 @@ annotations:
   - [CIS Kubernetes Benchmarks Master Node 配置](https://zhuanlan.zhihu.com/p/138445189)
   - [CIS Kubernetes Benchmarks API Server 配置](https://zhuanlan.zhihu.com/p/138995000)
   - [CIS Kubernetes Benchmarks Controller Manager & Scheduler 配置](https://zhuanlan.zhihu.com/p/143861485)
+  - [CIS Kubernetes Benchmarks ETCD 配置](https://zhuanlan.zhihu.com/p/144409080)
 - 借鉴项目 [clusterlint](https://github.com/digitalocean/clusterlint)
 
 ## Makefile的使用
